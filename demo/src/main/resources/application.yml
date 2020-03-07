@@ -1,0 +1,21 @@
+server:
+  port: 7001
+spring:
+  application:
+    name: product
+  datasource:
+    hikari:
+      maximum-pool-size: 2
+    url: jdbc:postgresql://localhost:5432/product?currentSchema=product
+    username: postgres
+    password: root
+    platform: postgresql
+  jpa:
+    hibernate: 
+      ddl-auto: create
+    properties:
+      hibernate:
+        temp:
+          use_jdbc_metadata_defaults: false
+    show-sql: true
+    database-platform: org.hibernate.dialect.PostgreSQL9Dialect
